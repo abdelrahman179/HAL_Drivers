@@ -5,8 +5,8 @@
 /*	 Description 		:    LCD Interface                       */
 /****************************************************************/
 
-#ifndef LCD_INT_H
-#define LCD_INT_H
+#ifndef LCD_INTERFACE_H
+#define LCD_INTERFACE_H
 
 void LCD_Ini(void); //
 void LCD_writeChar(u8 DATA);
