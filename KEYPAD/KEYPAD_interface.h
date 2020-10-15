@@ -5,8 +5,8 @@
 /*  DESCRIPTION: Keypad Interface                              */
 /*************************************************************/
 
-#ifndef Keypad_Interface_H
-#define Keypad_Interface_H
+#ifndef KEYPAD_INTERFACE_H
+#define KEYPAD_INTERFACE_H
 
 u8 keypad_u8GetPressedKey();
 
