@@ -1,14 +1,16 @@
 /*************************************************************/
 /*  AUTHOR     : AbdElrahman Ibrahim Zaki                    */
-/*  DATE       :  											 */
-/*  VERSION	   : V0.1										 */
+/*  DATE       :  					     */
+/*  VERSION	   : V0.1				     */
 /*  DESCRIPTION: Keypad Program                              */
 /*                                                           */
 /*************************************************************/
 #include "STD_TYPES.h"
 #include "BIT_MATH.h"
+
 #include "DIO_interface.h"
-#include "Kepad_interface.h"
+#include "KEYPAD_interface.h"
+
 #include <util/delay.h>
 
 const u8 switch_Value[4][4] = {
