@@ -5,19 +5,28 @@
 /* Desc.  : IR Communication program file                   */
 /************************************************************/
 
+#include "STD_TYPES.h"
+#include "BIT_MATH.h"
+
+#include "GPIO_interface.h"
+#include "STK_interface.h"
+#include "NVIC_interface.h"
+#include "EXTI_interface.h"
+
+#include "IR_interface.h"
+#include "IR_private.h"
+#include "IR_config.h"
+
 
 /* to detect either the falling edge received is start bit or any other */
 volatile u8   u8StartFlag       = 0   ;
 /* array to save the data received between falling edge and another el
- * mafrod a5ry 33 bit "32 + start bit bs 5alethom 50" */
+ * limitation should be 33 bit "32 + start bit but it's declared as 50" */
 volatile u32  u32FrameData[50]  = {0} ;
 /* counter to save a new value of the array */
 volatile u8   u8EdgeCounter     = 0   ;
-/* habos 3ala arr[17] bta3t el data la2en
- * kol zrayer el remote b address sabet */
+
 volatile u8   u8Data            = 0   ;
-
-
 
 
 void HIR_voidInit(void)
@@ -32,7 +41,7 @@ void HIR_voidInit(void)
 	/* Enable EXTI0 */
 	MNVIC_voidEnablePeripheral(EXTI);
 
-	MSTK_voidSetCallBack(MSTK_voidResetTimer);
+	MSTK_voidSetCallBack(MSTK_voidStopTimer);
 	/* Initialize Systick */
 	MSTK_voidInit(); /* enable systick AHB/8 = 1MHz each count = 1mSec */
 }
